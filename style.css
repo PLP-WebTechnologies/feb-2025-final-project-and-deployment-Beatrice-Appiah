@@ -1,0 +1,196 @@
+/* Basic Reset and Body Styling */
+        body {
+            font-family: 'Inter', sans-serif; /* Use the Inter font */
+            margin: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Navigation Styling */
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 0.5rem 0;
+        }
+ nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Arrange links horizontally */
+            justify-content: center; /* Center links */
+            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Space between links */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 0;
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+        }
+
+        /* Mobile Navigation Toggle (Hidden by default) */
+        .nav-toggle {
+            display: none; /* Hide toggle button on larger screens */
+            background: #555;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            position: absolute; /* Position toggle button */
+            top: 1rem;
+            right: 1rem;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Main Content Area */
+        main {
+            max-width: 1200px; /* Maximum width of the content */
+            margin: 20px auto; /* Center the main content with auto margins */
+            padding: 0 20px; /* Add padding on the sides */
+            display: grid; /* Use CSS Grid for layout */
+            grid-template-columns: 1fr 300px; /* One column for articles, one for sidebar */
+            gap: 20px; /* Gap between grid items */
+        }
+
+        /* Article Section */
+        section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #333;
+            border-bottom: 2px solid #eee; /* Separator line */
+            padding-bottom: 10px;
+        }
+
+        /* Individual Article Styling */
+        article {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ccc; /* Dashed separator */
+        }
+
+        article h3 {
+            margin-top: 0;
+            color: #007bff; /* Link color */
+        }
+
+        article a {
+             color: #007bff;
+             text-decoration: none;
+        }
+
+         article a:hover {
+             text-decoration: underline;
+         }
+
+
+        /* Aside (Sidebar) Styling */
+        aside {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        aside h4 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #eee; /* Separator line */
+            padding-bottom: 10px;
+
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 10px;
+        }
+
+        aside ul li a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        aside ul li a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Footer Styling */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Adjust main layout for smaller screens */
+            main {
+                grid-template-columns: 1fr; /* Stack columns on top of each other */
+                padding: 0 10px; /* Adjust padding */
+            }
+
+            /* Show mobile navigation toggle */
+            .nav-toggle {
+                display: block;
+            }
+
+            /* Hide default navigation list */
+            nav ul {
+                display: none;
+                flex-direction: column; /* Stack links vertically */
+                text-align: center;
+                background: #555; /* Background for mobile menu */
+                position: absolute; /* Position menu */
+                top: 60px; /* Below the header */
+                left: 0;
+                right: 0;
+                z-index: 100; /* Ensure menu is on top */
+                padding: 10px 0;
+            }
+
+            /* Show navigation list when active class is added by JS */
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Adjust vertical margin */
+            }
+        }
